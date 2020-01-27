@@ -2,7 +2,7 @@ class Statement
 
     def initialize(t_details)
         @t_details = t_details # transaction details (date and amount)
-        @t_list = Hash.new(0)  # list of transaction
+        @t_list = Hash.new(0)  # list of transactions
     end
 
     def balance

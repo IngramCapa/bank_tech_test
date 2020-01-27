@@ -7,17 +7,30 @@ describe Statement do
         Statement.new(transaction)
     }
 
-    it "should have a balance of 0 when empty" do
-        expect(subject.balance).to eq 0
+
+    describe "#balance" do
+        it "should have a balance of 0 when empty" do
+            expect(subject.balance).to eq 0
+        end
+
+        it "should return balance for one transaction" do
+            subject.deposit("10/01/2012", 1000)
+            expect(subject.balance).to eq 1000
+        end
+
+
     end
 
     describe "#deposit" do
 
         it "should add a transaction" do
             subject.deposit("10/01/2012", 1000)
-            
         end
+
+        
     end
+
+    
 end
 
 
