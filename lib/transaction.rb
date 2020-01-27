@@ -12,8 +12,8 @@ class Transaction
         @balance += amount
     end
 
-    private
 
+    private
 
     def format_date(date)
         date = Time.new
@@ -24,6 +24,9 @@ class Transaction
         amount = BigDecimal('0.00')
     end
 
-    
+    def is_valid(amount)
+        return unless amount.to_f.negative?
+        raise StandardError.new "Invalid input."
+    end
     
 end
