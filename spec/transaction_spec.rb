@@ -45,6 +45,13 @@ describe Transaction do
       subject.withdraw(5.00)
       expect(subject.balance).to eq 0.06
     end
+
+    it "should allow multiple withdrawals" do
+      subject.add(10.06)
+      subject.withdraw(5.00)
+      subject.withdraw(2.03)
+      expect(subject.balance).to eq 3.03
+    end
   end
 
 
