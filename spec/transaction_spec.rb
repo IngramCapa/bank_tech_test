@@ -33,6 +33,10 @@ describe Transaction do
       expect { subject.add(-5.06) }.to raise_error "Invalid input."
     end
 
+    it "should not allow inputting letters" do
+      expect { subject.add("ABc") }.to raise_error "Invalid input."
+    end
+
   end
 
 
