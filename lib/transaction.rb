@@ -9,7 +9,7 @@ class Transaction
     end
 
     def add(amount)
-        is_valid
+        is_valid(amount)
         @balance += amount
     end
 
