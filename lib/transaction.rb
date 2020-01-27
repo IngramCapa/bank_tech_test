@@ -8,6 +8,13 @@ class Transaction
         @balance = BigDecimal('0.00')
     end
 
+    def add(amount)
+        @balance += amount
+    end
+
+    private
+
+
     def format_date(date)
         date = Time.new
         "#{date.day}/#{date.month}/#{date.year}"
@@ -17,8 +24,6 @@ class Transaction
         amount = BigDecimal('0.00')
     end
 
-    def add(amount)
-        @balance += amount
-
-    end
+    
+    
 end
