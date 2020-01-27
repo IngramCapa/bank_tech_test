@@ -12,4 +12,10 @@ describe Transaction do
     end
   end
 
+  describe "#amount" do
+    it "records the amount in BigDecimal format" do
+      allow(subject).to receive(:format_amount).and_return("2.00")
+    end
+  end
+
 end
