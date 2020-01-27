@@ -13,6 +13,11 @@ class Transaction
         @balance += amount
     end
 
+    def withdraw(amount)
+        is_valid(amount)
+        @balance -= amount
+    end
+
 
     private
 
@@ -26,7 +31,8 @@ class Transaction
     end
 
     def is_valid(amount)
-        return unless amount.to_f.negative?
+        return unless amount.to_f.negative? 
+        # || amount.count("a-zA-Z") > 0
         raise StandardError.new "Invalid input."
     end
     
