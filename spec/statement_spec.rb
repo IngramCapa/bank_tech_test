@@ -1,36 +1,38 @@
-require 'transaction'
-require 'statement'
+# require 'transaction'
+# require 'statement'
 
-describe Statement do 
-    let(:subject) {
-        transaction = Transaction.new ({"10/01/2012" => 1000})
-        Statement.new(transaction)
-    }
-
-
-    describe "#balance" do
-        it "should have a balance of 0 when empty" do
-            expect(subject.balance).to eq 0
-        end
-
-        it "should return balance for one transaction" do
-            subject.deposit("10/01/2012", 1000)
-            expect(subject.balance).to eq 1000
-        end
+# describe Statement do 
+    
+#     let(:subject) {
+#         transaction = Transaction.new ({"10/01/2012" => 1000})
+#         Statement.new(transaction)
+#     }
 
 
-    end
+#     describe "#balance" do
+#         it "should have a balance of 0 when empty" do
+#             expect(subject.balance).to eq 0
+#         end
 
-    describe "#deposit" do
+#         it "should return balance for one transaction" do
+#             subject.deposit("10/01/2012", 1000)
+#             expect(subject.balance).to eq 1000
+#         end
 
-        it "should add a transaction" do
-            subject.deposit("10/01/2012", 1000)
-        end
+#     end
+
+#     describe "#deposit" do
+
+#         it "should add a transaction" do
+#             subject.deposit("10/01/2012", 1000)
+#         end
 
         
-    end
+
+        
+#     end
 
     
-end
+# end
 
 
