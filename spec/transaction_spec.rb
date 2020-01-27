@@ -23,6 +23,12 @@ describe Transaction do
       expect(subject.balance).to eq 5.06
     end
 
+    it "should allow adding multiple deposits" do
+      subject.add(5.06)
+      subject.add(5.00)
+      expect(subject.balance).to eq 10.06
+    end
+
     it "should not allow adding a negative amount" do
       expect { subject.add(-5.06) }.to raise_error "Invalid input."
     end
