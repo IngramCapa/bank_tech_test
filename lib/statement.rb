@@ -8,4 +8,8 @@ class Statement
     def balance
         0
     end
+
+    def deposit(date, amount)
+        @t_list[balance] += amount
+    end
 end

@@ -11,7 +11,13 @@ describe Statement do
         expect(subject.balance).to eq 0
     end
 
-    
+    describe "#deposit" do
+
+        it "should add a transaction" do
+            subject.deposit("10/01/2012", 1000)
+            
+        end
+    end
 end
 
 
