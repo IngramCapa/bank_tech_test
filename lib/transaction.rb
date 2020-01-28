@@ -14,6 +14,7 @@ class Transaction
     end
 
     def withdraw(amount)
+        fail "Amount higher than current balance." unless (@balance - amount) >= 0
         is_valid(amount)
         @balance -= amount
     end
@@ -33,6 +34,7 @@ class Transaction
     def is_valid(amount)
         return unless amount.to_f.negative? 
         # || amount.count("a-zA-Z") > 0
+        
         raise StandardError.new "Invalid input."
     end
     

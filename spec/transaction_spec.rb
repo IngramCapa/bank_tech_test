@@ -34,7 +34,7 @@ describe Transaction do
     end
 
     xit "should not allow inputting letters" do
-      expect { subject.add("7Bc") }.to raise_error "Invalid input."
+      expect { subject.add("7Bc.00") }.to raise_error "Invalid input."
     end
 
   end
@@ -51,6 +51,11 @@ describe Transaction do
       subject.withdraw(5.00)
       subject.withdraw(2.03)
       expect(subject.balance).to eq 3.03
+    end
+
+    it "should raise an error if the withdrawn amount is higher than the balance" do
+      subject.add(10.06)
+      expect { subject.withdraw(10.20) }.to raise_error "Amount higher than current balance."
     end
   end
 
