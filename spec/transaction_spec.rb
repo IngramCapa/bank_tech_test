@@ -36,7 +36,7 @@ describe Transaction do
     end
 
     it "should update the balance after a debit transaction" do
-      expect(debit.balance).to eq 200.00
+      expect(debit.update_balance).to eq 200.00
     end
   end
 
