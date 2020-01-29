@@ -3,7 +3,7 @@ require 'money'
 
 describe Transaction do
   
-  let(:subject){Transaction.new("10/01/2012", 2.03)}
+  let(:subject){Transaction.new("10/01/2012", 2.03, "credit", 2.03)}
 
   describe "#date" do
     it "records a transaction date in European format" do
@@ -24,6 +24,15 @@ describe Transaction do
       expect { subject.is_valid("Ab4") }.to raise_error "Invalid input."
     end
 
+  end
+
+  describe "#balance" do
+
+    let(:credit){Transaction.new("10/01/2012", 1000, "credit", 1000)}
+
+    it "should update the balance after a credit transaction" do
+      expect(credit.balance).to eq 1000
+    end
   end
 
   
