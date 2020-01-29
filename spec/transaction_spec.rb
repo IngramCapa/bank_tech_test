@@ -28,11 +28,16 @@ describe Transaction do
 
   describe "#balance" do
 
-    let(:credit){Transaction.new("10/01/2012", 1000, "credit", 1000)}
+    let(:credit){Transaction.new("10/01/2012", 1000.00, "credit", 1000.00)}
+    # let(:debit){Transaction.new("11/01/2012", 1000, "debit", 800)}
 
     it "should update the balance after a credit transaction" do
-      expect(credit.balance).to eq 1000
+      expect(credit.update_balance).to eq 2000
     end
+
+    # it "should update the balance after a debit transaction" do
+    #   expect(debit.balance).to eq 800
+    # end
   end
 
   

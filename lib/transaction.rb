@@ -9,6 +9,12 @@ class Transaction
         @balance = balance
     end
 
+    def update_balance
+        if type == "credit"
+            @balance += amount
+        end
+    end
+
     def format_date(date)
         date = Time.new
         "#{date.day}/#{date.month}/#{date.year}"
