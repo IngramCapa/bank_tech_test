@@ -1,6 +1,8 @@
 require 'history'
 
+
 describe History do
+    
     let(:subject){History.new}
 
     describe "#balance" do
@@ -8,4 +10,5 @@ describe History do
             allow(subject).to receive(:format_balance).and_return("0.00")
         end
     end
+
 end
