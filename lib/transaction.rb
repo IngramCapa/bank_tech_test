@@ -10,9 +10,7 @@ class Transaction
     end
 
     def update_balance
-        if type == "credit"
-            @balance += amount
-        end
+        type == "credit" ? @balance += amount : @balance -= amount
     end
 
     def format_date(date)
