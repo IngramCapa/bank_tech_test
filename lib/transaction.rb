@@ -7,8 +7,6 @@ class Transaction
         @amount = amount
     end
 
-    private
-
     def format_date(date)
         date = Time.new
         "#{date.day}/#{date.month}/#{date.year}"
@@ -16,6 +14,12 @@ class Transaction
 
     def format_amount(amount)
         amount = BigDecimal('0.00')
+    end
+
+    def is_valid(amount)
+        return unless amount.to_f.negative?  
+        # || amount.count("a-zA-Z") > 0
+        raise StandardError.new "Invalid input."
     end
       
 end

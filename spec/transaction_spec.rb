@@ -15,6 +15,10 @@ describe Transaction do
     it "records the amount in BigDecimal format" do
       allow(subject).to receive(:format_amount).and_return("2.03")
     end
+
+    it "should not allow a negative amount" do
+      expect { subject.is_valid(-5.06) }.to raise_error "Invalid input."
+    end
   end
 
   
