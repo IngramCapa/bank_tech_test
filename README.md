@@ -56,13 +56,41 @@ I want my account to tell me if I have insufficient funds when withdrawing money
 
 ## Code Structure
 
-The program is split into four classes:
+The program is split into four classes, each built to handle a single responsibility. The Account class is bringing all of these responsibilites together, by storing deposits and withdrawals, and printing account statements.
 
 Transaction: stores transaction information such as date, amount, type of transaction, balance
-TransactionHisto: stores all the user transactions
+TransactionHistory: stores all the user transactions
 Account: manages the user transactions
 PrintStatement: prints to stdout all the transactions
 
+## Technologies Used
+
+```
+ruby - development code
+rspec - testing
+rubocop and simplecov - linting and test coverage, respectively
+```
+
+## Reflection
+
+Although all the rspec tests are passing, the user cannot interact with the program in irb.
+
+Issue to be solved:
+```
+2.6.3 :001 > require './lib/account.rb'
+ => true 
+2.6.3 :002 > account = Account.new
+ => #<Account:0x00007fd85d8e2280 @transactions=#<TransactionHistory:0x00007fd85d8e2258 @transactions=[], @transaction_class=Transaction>, @balance=0> 
+2.6.3 :003 > account.deposit(1000.00)
+Traceback (most recent call last):
+        6: from /Users/student/.rvm/rubies/ruby-2.6.3/bin/irb:23:in `<main>'
+        5: from /Users/student/.rvm/rubies/ruby-2.6.3/bin/irb:23:in `load'
+        4: from /Users/student/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+        3: from (irb):3
+        2: from /Users/student/Work/tech_test_week/bank_tech_test/lib/account.rb:13:in `deposit'
+        1: from /Users/student/Work/tech_test_week/bank_tech_test/lib/transaction_history.rb:11:in `add_transaction'
+ArgumentError (wrong number of arguments (given 3, expected 4))
+```
 
 
 
