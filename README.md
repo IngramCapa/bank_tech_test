@@ -55,8 +55,9 @@ I want my account to tell me if I have insufficient funds when withdrawing money
 ```
 
 ## Code Structure
+After writing the user stories, I broke down the approach in smaller steps which allowed me to split responsibilites into classes.
 
-The program is split into four classes, each built to handle a single responsibility. The Account class is bringing all of these responsibilites together, by storing deposits and withdrawals, and printing account statements.
+The program is split into four classes, each built to handle a single responsibility. The Account class is bringing all of these responsibilites together, by storing deposits and withdrawals, and printing account statements. 
 
 * Transaction: stores transaction information such as date, amount, type of transaction, balance  
 * TransactionHistory: stores all the user transactions  
@@ -72,6 +73,8 @@ rubocop and simplecov - linting and test coverage, respectively
 ```
 
 ## Reflection
+
+
 
 Although all the rspec tests are passing, the user cannot interact with the program in irb.
 
