@@ -14,11 +14,6 @@ describe TransactionHistory do
         it "adds one transaction to the history" do
             expect(subject.add_transaction(800.00, "debit", 1000.00, transaction_class)).to eq transaction_1
         end
-
-        # it "adds more than one transaction to the history" do
-        #     expect(subject.add_transaction(1000.00, "credit", 1000.00, transaction_class)).to eq transaction_2
-
-        # end
     end
 
     describe "#transactions" do
@@ -36,6 +31,7 @@ describe TransactionHistory do
         end
 
         it "returns newest transaction first" do
+            expect(subject.transactions.first.date).to eq("13/01/2012")
         end
     end
   
