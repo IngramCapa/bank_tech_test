@@ -1,6 +1,6 @@
 # bank_tech_test
 
-Week 10 tech test at Makers. The purpose of this is to practice OO design and TDD.
+Week 10 tech test at Makers. The purpose of this is to practice OO design and TDD and reflect on how to improve personal programming practices.
 
 ## Specification
 
