@@ -1,9 +1,9 @@
-require 'statement'
+require 'account'
 
-describe Statement do
+describe Account do
   let(:transaction) { double :transaction }
   let(:transaction_history) { double :transaction_history }
-  let(:subject) { Statement.new(transaction_history) }
+  let(:subject) { Account.new(transaction_history) }
 
   before(:each) do
     allow(transaction_history).to receive(:add_transaction)

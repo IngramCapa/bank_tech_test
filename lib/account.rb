@@ -2,7 +2,7 @@ require_relative 'transaction'
 require_relative 'transaction_history'
 require_relative 'print_statement'
 
-class Statement
+class Account
   def initialize(transaction_history = TransactionHistory.new, balance = 0)
     @transactions = transaction_history
     @balance = balance
