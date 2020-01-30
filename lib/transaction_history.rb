@@ -9,7 +9,7 @@ class TransactionHistory
         @transaction_class = transaction_class
     end
 
-    def add_transaction(amount, type, balance, transaction_class )
+    def add_transaction(amount, type, balance, transaction_class)
         transaction = transaction_class.new(amount, type, balance)
         @transactions.unshift(transaction).first
     end
