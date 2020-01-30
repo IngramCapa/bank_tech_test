@@ -7,6 +7,7 @@ describe Statement do
 
     before(:each) do
         allow(transaction).to receive(:new)
+        # allow(transaction).to receive(:is_valid)
         allow(transaction_history).to receive(:add_transaction)
     end
     
@@ -15,7 +16,13 @@ describe Statement do
         it "increases the balance by 1000" do
             expect(subject.deposit(1000)).to eq 1000
         end
+    end
 
+    describe "#withdrawal" do
+        it "decreases the balance by 800" do
+            subject.deposit(1000)
+            expect(subject.withdrawal(800)).to eq 200
+        end
     end
 
 
