@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'transaction'
 
 class TransactionHistory
-
   attr_reader :transactions
 
   def initialize(transaction_class = Transaction)
@@ -13,5 +14,4 @@ class TransactionHistory
     transaction = transaction_class.new(amount, type, balance)
     @transactions.unshift(transaction).first
   end
-
 end
