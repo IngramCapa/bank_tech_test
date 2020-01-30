@@ -50,8 +50,8 @@ So that I have a clear view of my expenses
 I want the newest transactions to show first.
 
 As an account holder
-So that I don't go into overdraft when withdrawing money
-I want my account to tell me if I have insufficient funds.
+So that I don't spend more than I should
+I want my account to tell me if I have insufficient funds when withdrawing money.
 ```
 
 
