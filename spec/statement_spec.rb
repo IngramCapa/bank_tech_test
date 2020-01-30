@@ -7,7 +7,6 @@ describe Statement do
 
     before(:each) do
         allow(transaction).to receive(:new)
-        # allow(transaction).to receive(:is_valid)
         allow(transaction_history).to receive(:add_transaction)
     end
     
