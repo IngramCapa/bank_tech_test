@@ -17,7 +17,7 @@ class Statement
   end
 
   def withdrawal(amount)
-    raise StandardError, "Not enough money" if @balance -amount < 0
+    raise StandardError, 'Not enough money in account.' if @balance -amount < 0
     # add validation method
     @transactions.add_transaction(amount, 'debit', @balance)
     @balance -= amount

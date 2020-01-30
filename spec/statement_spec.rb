@@ -27,7 +27,7 @@ describe Statement do
 
     it "should raise an error in case of insufficient funds" do
       subject.deposit(1000)
-      expect { subject.withdrawal(1200) }.to raise_error(StandardError, 'Not enough money')
+      expect { subject.withdrawal(1200) }.to raise_error(StandardError, 'Not enough money in account.')
     end
   end
 
