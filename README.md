@@ -54,5 +54,15 @@ So that I don't spend more than I should
 I want my account to tell me if I have insufficient funds when withdrawing money.
 ```
 
+## Code Structure
+
+The program is split into four classes:
+
+Transaction: stores transaction information such as date, amount, type of transaction, balance
+TransactionHisto: stores all the user transactions
+Account: manages the user transactions
+PrintStatement: prints to stdout all the transactions
+
+
 
 
