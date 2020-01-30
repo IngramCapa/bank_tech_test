@@ -58,10 +58,10 @@ I want my account to tell me if I have insufficient funds when withdrawing money
 
 The program is split into four classes, each built to handle a single responsibility. The Account class is bringing all of these responsibilites together, by storing deposits and withdrawals, and printing account statements.
 
-Transaction: stores transaction information such as date, amount, type of transaction, balance
-TransactionHistory: stores all the user transactions
-Account: manages the user transactions
-PrintStatement: prints to stdout all the transactions
+Transaction: stores transaction information such as date, amount, type of transaction, balance  
+TransactionHistory: stores all the user transactions  
+Account: manages the user transactions  
+PrintStatement: prints to stdout all the transactions  
 
 ## Technologies Used
 
