@@ -8,7 +8,7 @@ describe PrintStatement do
 
     describe "#print_header" do
         it "should print the table header" do
-            expect(subject.print_header).to output("date || credit || debit || balance\n").to_stdout
+            expect { subject.print_header }.to output("date || credit || debit || balance\n").to_stdout
         end
     end
 
