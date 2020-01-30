@@ -18,7 +18,7 @@ class Transaction
     "#{date.day}/#{date.month}/#{date.year}"
   end
 
-  def format_amount(amount)
+  def format_amount(_amount)
     amount = BigDecimal('0.00')
   end
 
