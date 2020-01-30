@@ -18,11 +18,11 @@ describe Transaction do
     end
 
     it 'should not allow a negative amount' do
-      expect { subject.is_valid(-5.06) }.to raise_error 'Invalid input.'
+      expect { subject.valid?(-5.06) }.to raise_error 'Invalid input.'
     end
 
     it 'should not allow a string as input' do
-      expect { subject.is_valid('Ab4') }.to raise_error 'Invalid input.'
+      expect { subject.valid?('Ab4') }.to raise_error 'Invalid input.'
     end
   end
 

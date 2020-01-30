@@ -20,12 +20,12 @@ class Transaction
     "#{date.day}/#{date.month}/#{date.year}"
   end
 
-  def format_amount(_amount)
+  def format_amount(amount)
     amount = BigDecimal('0.00')
   end
 
-  def is_valid(amount)
-    return unless amount.to_f.negative? || amount.count('a-zA-Z') > 0
+  def valid?(amount)
+    return unless amount.to_f.negative? || amount.count('a-zA-Z').positive?
 
     raise StandardError, 'Invalid input.'
   end

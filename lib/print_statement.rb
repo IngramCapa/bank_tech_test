@@ -13,8 +13,8 @@ class PrintStatement
     @transaction_history.transactions.each do |t|
       if t.type == 'credit'
         puts "#{t.date} || #{format('%.2f', t.amount)} || || #{format('%.2f', t.balance)}"
-      else t.type == 'debit'
-           puts "#{t.date} || || #{format('%.2f', t.amount)} || #{format('%.2f', t.balance)}"
+      elsif t.type == 'debit'
+        puts "#{t.date} || || #{format('%.2f', t.amount)} || #{format('%.2f', t.balance)}"
       end
     end
   end
