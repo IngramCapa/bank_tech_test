@@ -30,6 +30,15 @@ describe Statement do
   end
 
   describe "#print" do
+    let(:printout) {double :print_statement}
 
+    before(:each) do
+      allow(printout).to receive (:print_header) {puts 'date || credit || debit || balance'}
+      allow(printout).to receive (:print_transactions) { puts "13/01/2012 || || 800.00 || 200.00\n10/01/2012 || 1000.00 || || 1000.00\n"}
+    end
+
+    it "prints the statement" do
+      expect{ subject.print_statement(printout) }.to output("date || credit || debit || balance\n13/01/2012 || || 800.00 || 200.00\n10/01/2012 || 1000.00 || || 1000.00\n").to_stdout
+    end
   end
 end
