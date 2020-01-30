@@ -9,3 +9,4 @@ gem 'money'
 gem 'rspec'
 gem 'simplecov', require: false
 gem 'simplecov-console', require: false
+gem 'rubocop', '0.71.0'
