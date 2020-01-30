@@ -24,7 +24,7 @@ class Transaction
     end
 
     def is_valid(amount)
-        return unless amount.to_f.negative?|| amount.count("a-zA-Z") > 0
+        return unless amount.to_f.negative? || amount.count("a-zA-Z") > 0
         raise StandardError.new "Invalid input."
     end
 end
