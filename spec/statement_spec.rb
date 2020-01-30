@@ -8,8 +8,9 @@ describe Statement do
   let(:subject) { Statement.new(transaction_history) }
 
   before(:each) do
-    allow(transaction).to receive(:new)
     allow(transaction_history).to receive(:add_transaction)
+    allow(transaction).to receive(:new)
+    
   end
 
   describe '#deposit' do
@@ -23,5 +24,14 @@ describe Statement do
       subject.deposit(1000)
       expect(subject.withdrawal(800)).to eq 200
     end
+
+    it "should raise an error in case of insufficient funds" do
+      subject.deposit(1000)
+      expect { subject.withdrawal(1200) }.to raise_error(StandardError, 'Not enough money')
+    end
+  end
+
+  describe "#print" do
+
   end
 end
