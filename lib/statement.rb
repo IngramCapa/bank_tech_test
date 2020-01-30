@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'transaction'
 require_relative 'transaction_history'
 require_relative 'print_statement'
@@ -17,7 +15,8 @@ class Statement
   end
 
   def withdrawal(amount)
-    raise StandardError, 'Not enough money in account.' if @balance -amount < 0
+    raise StandardError, 'Not enough money in account.' if @balance - amount.negative?
+
     # add validation method
     @transactions.add_transaction(amount, 'debit', @balance)
     @balance -= amount

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class PrintStatement
   def initialize(transaction_history)
     @transaction_history = transaction_history
