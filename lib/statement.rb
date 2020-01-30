@@ -10,8 +10,8 @@ class Statement
     end
 
     def deposit(amount)
-        is_valid(amount)
-        add_transaction(amount, "credit", @balance)
+        # is_valid(amount)
+        @transactions.add_transaction(amount, "credit", @balance)
         @balance += amount
     end
 end

@@ -11,7 +11,7 @@ describe Statement do
     end
     
 
-    xdescribe "#deposit" do
+    describe "#deposit" do
         it "increases the balance by 1000" do
             expect(subject.deposit(1000)).to eq 1000
         end
