@@ -10,6 +10,7 @@ class Transaction
     end
 
     def update_balance
+        # update balance to show 2 decimals
         type == "credit" ? @balance += amount : @balance -= amount
     end
 
