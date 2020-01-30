@@ -12,4 +12,11 @@ describe PrintStatement do
         end
     end
 
+    describe "#transaction_history" do
+        it "should print the list of transactions" do
+            allow(transaction_history).to receive(:transactions) {[transaction_2, transaction_1]}
+            expect { subject.print_transactions }.to output("13/01/2012 || || 800.00 || 200.00\n10/01/2012 || 1000.00 || || 1000.00\n").to_stdout
+        end
+    end
+
 end

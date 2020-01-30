@@ -1,5 +1,6 @@
 require_relative 'transaction'
 require_relative 'transaction_history'
+require_relative 'print_statement'
 
 class Statement
 
@@ -18,6 +19,7 @@ class Statement
 
 
     def withdrawal(amount)
+        # StandardError.new "Not enough money" if @balance -amount < 0
         # add validation method
         @transactions.add_transaction(amount, "debit", @balance)
         @balance -= amount
