@@ -37,7 +37,7 @@ Clone this repository, then
 
 Although all the rspec tests are passing, the user cannot interact with the program in irb.
 
-!!!Issue to be solved:!!!
+!!! Issue to be solved !!!
 ```
 2.6.3 :001 > require './lib/account.rb'
  => true 
