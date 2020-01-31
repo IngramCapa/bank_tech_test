@@ -53,6 +53,7 @@ Traceback (most recent call last):
         1: from /Users/student/Work/tech_test_week/bank_tech_test/lib/transaction_history.rb:11:in `add_transaction'
 ArgumentError (wrong number of arguments (given 3, expected 4))
 ```
+Not all the features below are fully functional yet:
 
 ```bash
 # irb
@@ -120,10 +121,3 @@ The main takeaway is to always use irb for testing first, rather than jump strai
 Next steps:
 - fix irb error as presented above and related rspec tests;
 - add amount validation method to withdrawal and deposit methods;
-- 
-
-
-
-
-
-
