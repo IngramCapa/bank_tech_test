@@ -104,16 +104,23 @@ The program is split into four classes, each built to handle a single responsibi
 ## Technologies Used
 
 ```
-ruby - development code
+ruby - development
 rspec - testing
 rubocop and simplecov - linting and test coverage, respectively
 ```
 
 ## Reflection
 
-The whole tech test was deciding what I should prioritise in my code, the model or the presentation. After a couple of false starts, I decided to write code that models the statement table as it is displayed, as it seemed a clearer option. The alternative was to build a straightforward model and manipulate the display, rather than the other way around, which becomes more intuitive after some serious practice.
+The whole tech test was deciding what I should prioritise in my code, the model or the presentation. After a couple of false starts, I decided to write code that models the statement table as it is displayed, as it seemed a clearer option. The alternative was to build a straightforward model and manipulate the display, rather than the other way around, which did not feel as intuitive as modelling the table.
+
+I used BigDecimal to provide support for accurate floating points numbers; I used it for the amount variable, but ended up modifying the balance variable due to time constraints.
 
 The main takeaway is to always use irb for testing first, rather than jump straight to rspec test-writing.
+
+Next steps:
+- fix irb error as presented above and related rspec tests;
+- add amount validation method to withdrawal and deposit methods;
+- 
 
 
 
