@@ -83,7 +83,7 @@ I want my account to tell me if I have insufficient funds when withdrawing money
 ```
 
 ## Code Structure
-After writing the user stories, I broke down the approach in smaller steps which allowed me to split responsibilites into classes.
+After writing the user stories, I broke down the approach in smaller steps which allowed me to split responsibilites into classes. I used BigDecimal to provide support for accurate floating points numbers.
 
 The program is split into four classes, each built to handle a single responsibility. The Account class is bringing all of these responsibilites together, by storing deposits and withdrawals, and printing account statements. 
 
@@ -103,10 +103,3 @@ rubocop and simplecov - linting and test coverage, respectively
 ## Reflection
 
 The whole tech test was deciding what I should prioritise in my code, the model or the presentation. After a couple of false starts, I decided to write code that models the statement table as it is displayed, as it seemed a clearer option. The alternative was to build a straightforward model and manipulate the display, rather than the other way around, which did not feel as intuitive as modelling the table.
-
-I used BigDecimal to provide support for accurate floating points numbers; I used it for the amount variable, but ended up modifying the balance variable due to time constraints.
-
-The main takeaway is to always use irb for testing first, rather than jump straight to rspec test-writing.
-
-Next steps:
-- add amount validation method to withdrawal and deposit methods;
