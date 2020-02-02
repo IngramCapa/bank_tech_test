@@ -1,7 +1,7 @@
 require 'transaction_history'
 
 describe TransactionHistory do
-  let(:subject) { TransactionHistory.new }
+  let(:subject) { TransactionHistory.new(transaction_class) }
   let(:transaction_1) { double :transaction }
   let(:transaction_2) { double :transaction }
 
