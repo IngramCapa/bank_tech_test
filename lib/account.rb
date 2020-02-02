@@ -20,7 +20,7 @@ class Account
     @balance -= amount
   end
 
-  def print_statement(print_statement = PrintStatement.new)
+  def print(print_statement = PrintStatement.new(@transactions)) 
     print_statement.print_header
     print_statement.print_transactions
   end

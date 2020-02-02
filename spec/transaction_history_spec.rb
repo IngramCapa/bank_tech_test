@@ -10,7 +10,6 @@ describe TransactionHistory do
   before(:each) do
     allow(transaction_1).to receive(:valid?)
     allow(transaction_2).to receive(:valid?)
-
   end
 
   describe '#add' do
