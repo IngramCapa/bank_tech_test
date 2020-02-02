@@ -8,8 +8,9 @@ describe TransactionHistory do
   let(:transaction_class) { double :transaction_class, new: transaction_1 }
 
   describe '#add' do
+  
     it 'adds one transaction to the history' do
-      expect(subject.add_transaction(800.00, 'debit', 1000.00, transaction_class)).to eq transaction_1
+      expect(subject.add_transaction('10/01/2012', 800.00, 'debit', 1000.00)).to eq transaction_1
     end
   end
 
