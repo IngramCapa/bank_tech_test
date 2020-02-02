@@ -23,4 +23,13 @@ describe Transaction do
       expect { subject.valid?('Ab4') }.to raise_error 'Invalid input.'
     end
   end
+
+  describe '#balance' do
+    let(:credit) { Transaction.new('10/01/2012', 1000.00, 'credit', 1000.00) }
+    let(:debit) { Transaction.new('11/01/2012', 800.00, 'debit', 1000.00) }
+
+    it 'records the balance in BigDecimal format' do
+      allow(subject).to receive(:format_balance).and_return('2.03')
+    end
+  end 
 end
