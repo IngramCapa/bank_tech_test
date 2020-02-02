@@ -36,13 +36,24 @@ Clone this repository, then
 ```
 ```bash
 # irb
-> require './lib/account.rb' # require the file
-> account = Account.new # create a new account
-> account.deposit(1000) # to make a deposit
-> account.withdrawal(500) # to make a withdrawal
-> account.print_statement # to print out the accounts full transaction history
-> quit
+2.6.3 :001 > require './lib/account.rb'
+ => true 
+2.6.3 :002 > account = Account.new
+ => #<Account:0x00007fa54f9621d8 @transactions=#<TransactionHistory:0x00007fa54f9621b0 @transactions=[], @transaction_class=Transaction>, @balance=0> 
+2.6.3 :003 > account.deposit('10/01/2012', 1000.00)
+ => 1000.0 
+2.6.3 :004 > account.deposit('13/01/2012', 2000.00)
+ => 3000.0 
+2.6.3 :005 > account.withdrawal('14/01/2012', 500.00)
+ => 2500.0 
+2.6.3 :006 > account.print
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 3000.00
+13/01/2012 || 2000.00 || || 1000.00
+10/01/2012 || 1000.00 || || 0.00
 ```
+
+
 ## User stories
 
 ```
