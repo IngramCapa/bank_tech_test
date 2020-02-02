@@ -34,27 +34,6 @@ Clone this repository, then
 
 > irb # to interact with the code via an IRB REPL.
 ```
-
-Although all the rspec tests are passing, the user cannot interact with the program in irb.
-
-!!! Issue to be solved !!!
-```
-2.6.3 :001 > require './lib/account.rb'
- => true 
-2.6.3 :002 > account = Account.new
- => #<Account:0x00007fd85d8e2280 @transactions=#<TransactionHistory:0x00007fd85d8e2258 @transactions=[], @transaction_class=Transaction>, @balance=0> 
-2.6.3 :003 > account.deposit(1000.00)
-Traceback (most recent call last):
-        6: from /Users/student/.rvm/rubies/ruby-2.6.3/bin/irb:23:in `<main>'
-        5: from /Users/student/.rvm/rubies/ruby-2.6.3/bin/irb:23:in `load'
-        4: from /Users/student/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
-        3: from (irb):3
-        2: from /Users/student/Work/tech_test_week/bank_tech_test/lib/account.rb:13:in `deposit'
-        1: from /Users/student/Work/tech_test_week/bank_tech_test/lib/transaction_history.rb:11:in `add_transaction'
-ArgumentError (wrong number of arguments (given 3, expected 4))
-```
-Not all the features below are fully functional yet:
-
 ```bash
 # irb
 > require './lib/account.rb' # require the file
@@ -62,7 +41,7 @@ Not all the features below are fully functional yet:
 > account.deposit(1000) # to make a deposit
 > account.withdrawal(500) # to make a withdrawal
 > account.print_statement # to print out the accounts full transaction history
-> exit # to quit
+> quit
 ```
 ## User stories
 
@@ -119,5 +98,4 @@ I used BigDecimal to provide support for accurate floating points numbers; I use
 The main takeaway is to always use irb for testing first, rather than jump straight to rspec test-writing.
 
 Next steps:
-- fix irb error as presented above and related rspec tests;
 - add amount validation method to withdrawal and deposit methods;
