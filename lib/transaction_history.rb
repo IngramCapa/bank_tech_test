@@ -10,6 +10,7 @@ class TransactionHistory
 
   def add_transaction(date, amount, type, balance)
     transaction = @transaction_class.new(date, amount, type, balance)
+    transaction.valid?(amount)
     @transactions.unshift(transaction).first
   end
 end

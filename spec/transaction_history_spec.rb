@@ -7,6 +7,12 @@ describe TransactionHistory do
 
   let(:transaction_class) { double :transaction_class, new: transaction_1 }
 
+  before(:each) do
+    allow(transaction_1).to receive(:valid?)
+    allow(transaction_2).to receive(:valid?)
+
+  end
+
   describe '#add' do
   
     it 'adds one transaction to the history' do

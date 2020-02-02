@@ -9,7 +9,6 @@ class Account
   end
 
   def deposit(date, amount)
-    # add validation method
     @transactions.add_transaction(date, amount, 'credit', @balance)
     @balance += amount
   end
@@ -17,7 +16,6 @@ class Account
   def withdrawal(date, amount)
     raise StandardError, 'Not enough money in account.' if (@balance - amount).negative?
 
-    # add validation method
     @transactions.add_transaction(date, amount, 'debit', @balance)
     @balance -= amount
   end
