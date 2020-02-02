@@ -8,21 +8,19 @@ class Account
     @balance = balance
   end
 
-  def deposit(amount)
-    # add validation method
-    @transactions.add_transaction(amount, 'credit', @balance)
+  def deposit(date, amount)
+    @transactions.add_transaction(date, amount, 'credit', @balance)
     @balance += amount
   end
 
-  def withdrawal(amount)
+  def withdrawal(date, amount)
     raise StandardError, 'Not enough money in account.' if (@balance - amount).negative?
 
-    # add validation method
-    @transactions.add_transaction(amount, 'debit', @balance)
+    @transactions.add_transaction(date, amount, 'debit', @balance)
     @balance -= amount
   end
 
-  def print_statement(print_statement = PrintStatement.new)
+  def print(print_statement = PrintStatement.new(@transactions)) 
     print_statement.print_header
     print_statement.print_transactions
   end

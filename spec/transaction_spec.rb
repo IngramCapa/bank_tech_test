@@ -28,12 +28,8 @@ describe Transaction do
     let(:credit) { Transaction.new('10/01/2012', 1000.00, 'credit', 1000.00) }
     let(:debit) { Transaction.new('11/01/2012', 800.00, 'debit', 1000.00) }
 
-    it 'should update the balance after a credit transaction' do
-      expect(credit.update_balance).to eq 2000.00
+    it 'records the balance in BigDecimal format' do
+      allow(subject).to receive(:format_balance).and_return('2.03')
     end
-
-    it 'should update the balance after a debit transaction' do
-      expect(debit.update_balance).to eq 200.00
-    end
-  end
+  end 
 end

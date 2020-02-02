@@ -8,23 +8,24 @@ class Transaction
     @balance = balance
   end
 
-  def update_balance
-    # update balance to show 2 decimals
-    type == 'credit' ? @balance += amount : @balance -= amount
+  def valid?(amount)
+    return unless amount.to_f.negative? || amount.to_s.count('a-zA-Z').positive?
+
+    raise StandardError, 'Invalid input.'
   end
 
+  private
+
   def format_date(date)
-    date = Time.new
+    _date = Time.new
     "#{date.day}/#{date.month}/#{date.year}"
   end
 
   def format_amount(_amount)
-    amount = BigDecimal('0.00')
+    _amount = BigDecimal('0.00')
   end
 
-  def valid?(amount)
-    return unless amount.to_f.negative? || amount.count('a-zA-Z').positive?
-
-    raise StandardError, 'Invalid input.'
+  def format_balance(_balance)
+    _balance = BigDecimal('0.00')
   end
 end
