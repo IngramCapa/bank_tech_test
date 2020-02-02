@@ -3,21 +3,24 @@ require_relative 'transaction_history'
 require_relative 'print_statement'
 
 class Account
-  def initialize(transaction_history = TransactionHistory.new, balance = 0)
+  def initialize(transaction_history = TransactionHistory.new)
     @transactions = transaction_history
-    @balance = balance
+    @balance = 0
   end
 
   def deposit(date, amount)
-    @transactions.add_transaction(date, amount, 'credit', @balance)
     @balance += amount
+    @transactions.add_transaction(date, amount, 'credit', @balance)
+    @balance
+
   end
 
   def withdrawal(date, amount)
     raise StandardError, 'Not enough money in account.' if (@balance - amount).negative?
 
-    @transactions.add_transaction(date, amount, 'debit', @balance)
     @balance -= amount
+    @transactions.add_transaction(date, amount, 'debit', @balance)
+    @balance
   end
 
   def print(print_statement = PrintStatement.new(@transactions)) 
