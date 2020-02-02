@@ -13,6 +13,15 @@ class Transaction
     type == 'credit' ? @balance += amount : @balance -= amount
   end
 
+
+  def valid?(amount)
+    return unless amount.to_f.negative? || amount.count('a-zA-Z').positive?
+
+    raise StandardError, 'Invalid input.'
+  end
+
+  private
+
   def format_date(date)
     date = Time.new
     "#{date.day}/#{date.month}/#{date.year}"
@@ -22,9 +31,7 @@ class Transaction
     amount = BigDecimal('0.00')
   end
 
-  def valid?(amount)
-    return unless amount.to_f.negative? || amount.count('a-zA-Z').positive?
-
-    raise StandardError, 'Invalid input.'
+  def format_balance(balance)
+    balance = BigDecimal('0.00')
   end
 end
